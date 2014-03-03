@@ -10,8 +10,8 @@ public class Pad {
   int state;
   final int OFF = 0;
   final int ON = 1;
-  final color OFF_COLOR = #818181;
-  final color ON_COLOR = #FF5B5B;
+  final color OFF_COLOR = #8C8C8C;
+  final color ON_COLOR = #FF475A;
   
   Pad (PApplet app) {
     this(app, 0, 0);
@@ -31,7 +31,7 @@ public class Pad {
     this.y = posY;
     this.w = w;
     this.h = h;
-    this.radii = 7;
+    this.radii = 0;
 
   }
 

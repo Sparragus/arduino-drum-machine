@@ -15,6 +15,7 @@ public class Channel {
   
   Channel (PApplet app, int posX, int posY) {
     this.app = app;
+    app.registerMethod("draw", this);
     
     minim = new Minim(app);
     out   = minim.getLineOut();
@@ -39,7 +40,7 @@ public class Channel {
     }
   }
   
-  public void display() {
+  public void draw() {
     for(int i = 0; i < this.pads.length; i++) {
       this.pads[i].display();
     }
@@ -63,7 +64,7 @@ public class Channel {
         // do something...
         break;
       case MouseEvent.MOVE:
-        // do something...
+        // do somet`hing...
         break;
     }
   }
