@@ -14,9 +14,10 @@ void setup() {
   background(bg);
   
   channels = new Channel[4];
-  for (int i = 0; i < channels.length; i++) {
-    channels[i] = new Channel(app, 54, 100 + 40*i);
-  }
+  channels[0] = new Channel(app, "kick.wav", 54, 100 + 40*0);
+  channels[1] = new Channel(app, "snare.wav", 54, 100 + 40*1);
+  channels[2] = new Channel(app, "hh_close.wav", 54, 100 + 40*2);
+  channels[3] = new Channel(app, "hh_open.wav", 54, 100 + 40*3);
   
   currentStep = 0;
   steps = 16;

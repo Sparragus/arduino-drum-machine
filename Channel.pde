@@ -13,14 +13,14 @@ public class Channel {
   Pad[] pads;
   int x, y;
   
-  Channel (PApplet app, int posX, int posY) {
+  Channel (PApplet app, String sample, int posX, int posY) {
     this.app = app;
     app.registerMethod("draw", this);
     
-    minim = new Minim(app);
-    out   = minim.getLineOut();
-    sample = new Sampler("snare.wav", 4, minim);
-    sample.patch(out);
+    this.minim = new Minim(app);
+    this.out   = minim.getLineOut();
+    this.sample = new Sampler(sample, 4, minim);
+    this.sample.patch(out);
     
     this.x = posX;
     this.y = posY;
