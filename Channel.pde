@@ -46,29 +46,6 @@ public class Channel {
     }
   }
   
-  public void mouseEvent(MouseEvent event) {
-    int eX = event.getX();
-    int eY = event.getY();
-    
-    switch ( event.getAction() ) {
-      case MouseEvent.PRESS:
-        // do something...
-        break;
-      case MouseEvent.RELEASE:
-        // do something...
-        break;
-      case MouseEvent.CLICK:
-        // do something...
-        break;
-      case MouseEvent.DRAG:
-        // do something...
-        break;
-      case MouseEvent.MOVE:
-        // do somet`hing...
-        break;
-    }
-  }
-  
   public void trigger(int step) {
     if ( pads[step].isOn() ) {
       // play sound/send signal
