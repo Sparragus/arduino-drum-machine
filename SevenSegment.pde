@@ -123,10 +123,10 @@ public class SevenSegment {
     switch ( event.getAction() ) {
     case MouseEvent.PRESS:
       if (isInsideButtonUp(eX, eY)) {
-        this.value = (this.value <= 999)? ++this.value : this.value;
+        this.value = (this.value < this.max)? ++this.value : this.value;
       }
       else if (isInsideButtonDown(eX, eY)) {
-        this.value = (this.value > 0)? --this.value : this.value;
+        this.value = (this.value > this.min)? --this.value : this.value;
       }         
       break;
     case MouseEvent.RELEASE:
