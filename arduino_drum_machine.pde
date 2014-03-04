@@ -1,7 +1,7 @@
 PApplet app = this;
 Channel[] channels;
 Led[] leds;
-SevenSegment bpm;
+SevenSegment bpm, maxSteps;
 
 int currentStep, steps;
 PImage bg;
@@ -29,14 +29,19 @@ void setup() {
   
   bpm = new SevenSegment(app, "BPM", 56, 10, 1, 180);
   bpm.setValue(120);
-}
+  
+  maxSteps = new SevenSegment(app, "Steps", 150, 10, 1, 16);
+  maxSteps.setValue(16);}
 
 void draw() {
   background(bg);  
+
+  // Set steps
+  steps = maxSteps.getValue();
   
   // set framerate from bpm
   frameRate( map(bpm.getValue(), bpm.getMin(), bpm.getMax(), 0, bpm.getMax()/15) );
-  
+  steps = maxSteps.getValue();
   
   // Leds
   leds[(currentStep == 0) ? steps-1 : currentStep-1].setOff();
